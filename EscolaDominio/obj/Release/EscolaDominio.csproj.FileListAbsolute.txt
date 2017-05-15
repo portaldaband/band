@@ -1,0 +1,4 @@
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaDominio\bin\Release\EscolaDominio.dll
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaDominio\bin\Release\EscolaDominio.pdb
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaDominio\obj\Release\EscolaDominio.dll
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaDominio\obj\Release\EscolaDominio.pdb

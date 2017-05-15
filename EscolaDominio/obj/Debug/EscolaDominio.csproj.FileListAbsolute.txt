@@ -1,0 +1,9 @@
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaDominio\bin\Debug\EscolaDominio.dll
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaDominio\bin\Debug\EscolaDominio.pdb
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaDominio\obj\Debug\EscolaDominio.csprojResolveAssemblyReference.cache
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaDominio\obj\Debug\EscolaDominio.dll
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaDominio\obj\Debug\EscolaDominio.pdb
+C:\Users\fabio\Downloads\band-master\band-master\EscolaDominio\bin\Debug\EscolaDominio.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaDominio\bin\Debug\EscolaDominio.pdb
+C:\Users\fabio\Downloads\band-master\band-master\EscolaDominio\obj\Debug\EscolaDominio.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaDominio\obj\Debug\EscolaDominio.pdb

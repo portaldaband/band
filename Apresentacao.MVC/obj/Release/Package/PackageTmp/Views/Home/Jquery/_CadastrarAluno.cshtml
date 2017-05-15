@@ -1,0 +1,50 @@
+﻿<div id="cadastrarAlunoJquery" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Cadastro de Aluno</h4>
+            </div>
+            <div class="modal-body">
+                <form id="frmCadastrarAlunoJquery"  method="post">
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <div class="col-md-6">
+                                    <input type="text" name="Nome" maxlength="20" class="form-control" placeholder="Nome" id="nmAlunoJquery" required/>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="Sobrenome" maxlength="20" class="form-control" placeholder="Sobrenome" id="sobrenomeAlunoJquery" required/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:10px;">
+                            <div class="col-md-12 form-group">
+                                <div class="col-md-6">
+                                    <input type="text" name="CPF" class="form-control cpf" placeholder="CPF" id="cpfAlunoJquery" required/>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="RG" class="form-control rg" placeholder="Número do RG" id="rgAlunoJquery" required/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:10px;">
+                            <div class="col-md-12 form-group">
+                                <div class="col-md-6">
+                                    <input type="datetime" name="dtNascimento" class="form-control date_time" placeholder="Data de Nascimento" id="dtNascAlunoJquery" required/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:10px;">
+                            <div class="col-md-12 form-group">
+                                <div class="col-md-6">
+                                    <label>Selecione a escola</label>
+                                    <select id="slcEscolasJquery" class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+                    <button type="submit" class="btn btn-primary"> Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

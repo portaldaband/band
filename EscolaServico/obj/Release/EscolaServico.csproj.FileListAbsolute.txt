@@ -1,0 +1,11 @@
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Release\EscolaServico.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Release\EscolaServico.pdb
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Release\EscolaDominio.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Release\EscolaInfra.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Release\EntityFramework.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Release\EscolaDominio.pdb
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Release\EscolaInfra.pdb
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Release\EntityFramework.xml
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\obj\Release\EscolaServico.csprojResolveAssemblyReference.cache
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\obj\Release\EscolaServico.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\obj\Release\EscolaServico.pdb

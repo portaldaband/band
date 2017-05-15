@@ -1,0 +1,60 @@
+﻿<div id="editarAlunoJquery" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edição de Aluno</h4>
+            </div>
+            <div class="modal-body">
+                <form id="frmEditarAlunoJquery" method="post">
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col-md-12 form-group">
+                            <div class="col-md-6">
+                                <label>Selecione o aluno</label>
+                                <select id="slcEditarAluno" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <div class="col-md-6">
+                                <input type="text" name="Nome" maxlength="20" class="form-control" placeholder="Nome" id="nmEditarAlunoJquery" required/>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="Sobrenome" maxlength="20" class="form-control" placeholder="Sobrenome" id="sobrenomeEditarAlunoJquery" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col-md-12 form-group">
+                            <div class="col-md-6">
+                                <input type="text" name="CPF" class="form-control cpf" placeholder="CPF" id="cpfEditarAlunoJquery" required/>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="RG" class="form-control rg" placeholder="Número do RG" id="rgEditarAlunoJquery" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col-md-12 form-group">
+                            <div class="col-md-6">
+                                <input type="datetime" name="dtEditarNascimento" class="form-control date_time" placeholder="Data de Nascimento" id="dtEditarNascAlunoJquery" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col-md-12 form-group">
+                            <div class="col-md-6">
+                                <label>Selecione a escola</label>
+                                <select id="slcEditarEscolasJquery" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-warning"> Editar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

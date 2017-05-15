@@ -1,0 +1,22 @@
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaServico\bin\Debug\EscolaServico.dll
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaServico\bin\Debug\EscolaServico.pdb
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaServico\bin\Debug\EscolaDominio.dll
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaServico\bin\Debug\EscolaInfra.dll
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaServico\bin\Debug\EntityFramework.dll
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaServico\bin\Debug\EscolaDominio.pdb
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaServico\bin\Debug\EscolaInfra.pdb
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaServico\bin\Debug\EntityFramework.xml
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaServico\obj\Debug\EscolaServico.csprojResolveAssemblyReference.cache
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaServico\obj\Debug\EscolaServico.dll
+C:\Users\fabio\documents\visual studio 2015\Projects\EscolaBandeirantes\EscolaServico\obj\Debug\EscolaServico.pdb
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Debug\EscolaServico.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Debug\EscolaServico.pdb
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Debug\EscolaDominio.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Debug\EscolaInfra.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Debug\EntityFramework.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Debug\EscolaDominio.pdb
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Debug\EscolaInfra.pdb
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\bin\Debug\EntityFramework.xml
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\obj\Debug\EscolaServico.csprojResolveAssemblyReference.cache
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\obj\Debug\EscolaServico.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaServico\obj\Debug\EscolaServico.pdb

@@ -1,0 +1,41 @@
+﻿<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-8 col-md-push-3">
+            <h2>Sistema de cadastro escolar - Bem Vindo!</h2>
+        </div>
+    </div>
+    <div class="row" style="margin-top:5%;">
+        <div class="col-md-6 col-md-push-3">
+            <fieldset>
+                <legend>Alunos Cadastrados no Sistema</legend>
+                <div class="panel-body">
+                    @Html.Partial("~/Views/Home/Jquery/_AlunosJquery.cshtml")
+                </div>
+                <div class="panel-footer">
+                    <a href="#" class="btn btn-success" data-target="#cadastrarAlunoJquery" data-toggle="modal" id="editarAlunosJquery">Cadastrar</a>
+                    <a href="#" class="btn btn-primary" data-target="#editarAlunoJquery" data-toggle="modal" id="editarAlunosJquery">Editar</a>
+                    <a href="#" class="btn btn-info"    data-target="#detalheAlunoJquery" data-toggle="modal" id="editarAlunosJquery">Detalhes</a>
+                    <a href="#" class="btn btn-danger"  data-target="#excluirAlunoJquery" data-toggle="modal" id="editarAlunosJquery">Excluir</a>
+                </div>
+            </fieldset>
+        </div>
+        @*<div class="col-md-6">
+            <fieldset>
+                <legend>Alunos - Angular</legend>
+                <div class="panel-body">
+                    
+                </div>
+                <div class="panel-footer">
+                    <a href="#" class="btn btn-success btn-sm" id="editarAlunosJquery">Cadastrar Alunos</a>
+                    <a href="#" class="btn btn-primary btn-sm" id="editarAlunosJquery">Editar Alunos</a>
+                    <a href="#" class="btn btn-danger btn-sm" id="editarAlunosJquery">Excluir Alunos</a>
+                </div>
+            </fieldset>
+        </div>*@
+    </div>
+</div>
+
+
+
+
+   

@@ -1,0 +1,12 @@
+C:\Users\fabio\Downloads\band-master\band-master\EscolaInfra\bin\Debug\EscolaInfra.dll.config
+C:\Users\fabio\Downloads\band-master\band-master\EscolaInfra\bin\Debug\EscolaInfra.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaInfra\bin\Debug\EscolaInfra.pdb
+C:\Users\fabio\Downloads\band-master\band-master\EscolaInfra\bin\Debug\EntityFramework.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaInfra\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaInfra\bin\Debug\EscolaDominio.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaInfra\bin\Debug\EscolaDominio.pdb
+C:\Users\fabio\Downloads\band-master\band-master\EscolaInfra\bin\Debug\EntityFramework.xml
+C:\Users\fabio\Downloads\band-master\band-master\EscolaInfra\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\fabio\Downloads\band-master\band-master\EscolaInfra\obj\Debug\EscolaInfra.csprojResolveAssemblyReference.cache
+C:\Users\fabio\Downloads\band-master\band-master\EscolaInfra\obj\Debug\EscolaInfra.dll
+C:\Users\fabio\Downloads\band-master\band-master\EscolaInfra\obj\Debug\EscolaInfra.pdb

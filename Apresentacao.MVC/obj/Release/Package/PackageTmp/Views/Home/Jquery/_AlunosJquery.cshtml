@@ -1,0 +1,262 @@
+﻿<div>
+    <ul id="listaAlunosJquery"></ul>
+</div>
+<div class="row">
+    @Html.Partial("~/Views/Home/Jquery/_CadastrarAluno.cshtml")
+    @Html.Partial("~/Views/Home/Jquery/_ExcluirAluno.cshtml")
+    @Html.Partial("~/Views/Home/Jquery/_DetalheAlunos.cshtml")
+    @Html.Partial("~/Views/Home/Jquery/_EditarAluno.cshtml")
+</div>
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/mask")
+<script>
+    var acesso = "http://fcarvalho-001-site2.etempurl.com/api";
+
+    $(document).ready(function () {
+        $('.date_time').mask('00/00/0000 00:00:00');
+        $('.cpf').mask('000.000.000-00', { reverse: true });
+        $('.rg').mask('99.999.999');
+
+        waitingDialog.show('Carregando todos os alunos cadastrados.');
+        obterTodosAlunos();
+        obterTodasEscolas();
+
+
+    });
+
+ 
+
+    function obterTodosAlunos() {
+        //Obter Todos os Alunos
+        $.ajax({
+            url: acesso + "/Aluno",
+            dataType: "json",
+            method: "GET",
+            success: OnSuccessAluno,
+            failure: function (response) {
+                waitingDialog.hide();
+                alert(response.d);
+            }
+        })
+    };
+
+    function obterTodasEscolas() {
+        $.ajax({
+            url: acesso + "/Escola",
+            dataType: "json",
+            method: "GET",
+            success: OnSuccessEscola,
+            failure: function (response) {
+                waitingDialog.hide();
+                alert(response.d);
+            }
+        })
+    };
+
+    function OnSuccessEscola(data) {
+        $("#slcEditarEscolasJquery").empty();
+        $("#slcEscolasJquery").empty();
+        
+        $.each(data, function (index, key) {
+            $('#slcEditarEscolasJquery').append($('<option>').text(key.NomeEscola).attr('value', key.EscolaId));
+            $('#slcEscolasJquery').append($('<option>').text(key.NomeEscola).attr('value', key.EscolaId));
+            waitingDialog.hide();
+        });
+    }
+
+    function OnSuccessAluno(data) {
+        $("#listaAlunosJquery").empty();
+        $('#slcExcluirAluno').empty();
+        $('#slcDetalheAluno').empty();
+        $('#slcEditarAluno').empty();
+        
+        $.each(data, function (index, key) {
+            $('#listaAlunosJquery').append('<li>' + key.Nome + " " + key.Sobrenome + '</li>')
+            $('#slcExcluirAluno').append($('<option>').text(key.Nome + " " + key.Sobrenome).attr('value', key.AlunoId));
+            $('#slcDetalheAluno').append($('<option>').text(key.Nome + " " + key.Sobrenome).attr('value', key.AlunoId));
+            $('#slcEditarAluno').append($('<option>').text(key.Nome + " " + key.Sobrenome).attr('value', key.AlunoId));
+            waitingDialog.hide();
+        });
+    }
+
+    $("#frmCadastrarAlunoJquery").submit(function (e) {
+        waitingDialog.show('Cadastrando novo aluno.');
+        var dataStr = JSON.stringify($("#frmCadastrarAlunoJquery").serializeArray());
+        var dataObj = JSON.parse(dataStr);
+        var aluno = {};
+        aluno.Nome = dataObj[0].value;
+        aluno.Sobrenome = dataObj[1].value;
+        aluno.CPF = dataObj[2].value;
+        aluno.RG = dataObj[3].value;
+        var datetime = dataObj[4].value.split("/");
+        var formato = datetime[1] + "/" + datetime[0] + "/" + datetime[2];
+        var formatoFinal = new Date(formato);
+        aluno.dtNascimento = formatoFinal.toISOString();
+        $.ajax({
+            url: acesso + "/Aluno",
+            dataType: "json",
+            method: "POST",
+            //contentType: "application/json: charset=utf-8",
+            data: aluno,
+            success: function (response) {
+                cadastrarAlunoEmEscola(response);
+                waitingDialog.hide();
+            },
+            failure: function (response) {
+                console.log(response.d);
+            }
+        });
+
+        e.preventDefault();
+    })
+
+    function cadastrarAlunoEmEscola(response, DtIngresso) {
+        var escolaAluno = {};
+        var EscolaId = $("#slcEscolasJquery").val();
+        var matricula = Math.floor((Math.random() * 100000000) + 1);
+        escolaAluno.AlunoId = response.AlunoId.toString();
+        escolaAluno.EscolaId = EscolaId;
+        escolaAluno.CodigoMatricula = matricula.toString();
+        $.ajax({
+            url: acesso + "/EscolaAluno",
+            dataType: "json",
+            method: "POST",
+            data: escolaAluno,
+            success: function (response) {
+                obterTodosAlunos();
+                $("#cadastrarAlunoJquery").modal('hide');
+            },
+            failure: function (response) {
+                console.log(response);
+            }
+        })
+    };  
+
+    $("#excluirAlunoJquery").submit(function (e) {
+        waitingDialog.show('Excluindo aluno, aguarde...');
+        var id = $("#slcExcluirAluno option:selected").val();
+        $.ajax({
+            url: acesso + "/Aluno/" + id,
+            method: "DELETE",
+            contentType: "application/json",
+            success: function () {
+                obterTodosAlunos();
+                waitingDialog.hide();
+            },
+            failure: function () {
+                waitingDialog.hide();
+            }
+        });
+
+        e.preventDefault();
+    });
+
+    $("#slcDetalheAluno").on('change', function (e) {
+        var id = $("#slcDetalheAluno option:selected").val();
+        waitingDialog.show('Consultando informações do aluno, aguarde...');
+        $.ajax({
+            url: acesso + "/Aluno/" + id,
+            dataType: "json",
+            method: "GET",
+            contentType: "application/json",
+            success: function (data) {
+                $("#nmDetalhesAlunoJquery").val(data.Nome);
+                $("#sobrenomeDetalhesAlunoJquery").val(data.Sobrenome);
+                $("#cpfDetalhesAlunoJquery").val(data.CPF);
+                $("#rgDetalhesAlunoJquery").val(data.RG);
+                var dt = new Date(data.dtNascimento).toLocaleDateString();
+                $("#dtNascDetalhesAlunoJquery").val(dt);
+                $("#detalhesEscolaAluno").val(data.NomeEscola);
+                waitingDialog.hide();
+            },
+            failure: function (response) {
+                waitingDialog.hide();
+                alert(response.d);
+            }
+        })
+    });
+
+    $("#slcEditarAluno").on('change', function (e)
+    {
+        var id = $("#slcEditarAluno option:selected").val();
+        waitingDialog.show('Consultando informações do aluno, aguarde...');
+        $.ajax({
+            url: acesso + "/Aluno/" + id,
+            dataType: "json",
+            method: "GET",
+            contentType: "application/json",
+            success: function (data) {
+                $("#nmEditarAlunoJquery").val(data.Nome);
+                $("#sobrenomeEditarAlunoJquery").val(data.Sobrenome);
+                $("#cpfEditarAlunoJquery").val(data.CPF);
+                $("#rgEditarAlunoJquery").val(data.RG);
+                var dt = new Date(data.dtNascimento).toLocaleDateString();
+                var novaData = dt.split("-");
+                var data = novaData[1] + '/' + novaData[2] + '/' + novaData[0];
+                $("#dtEditarNascAlunoJquery").val(data);
+                waitingDialog.hide();
+            },
+            failure: function (response) {
+                waitingDialog.hide();
+                alert(response.d);
+            }
+        })
+    });
+
+    $("#frmEditarAlunoJquery").submit(function (e) {
+        var id = $("#slcEditarAluno option:selected").val();
+        waitingDialog.show('Editando dados do aluno.');
+        var dataStr = JSON.stringify($("#frmEditarAlunoJquery").serializeArray());
+        var dataObj = JSON.parse(dataStr);
+        var aluno = {};
+        aluno.AlunoId = id;
+        aluno.Nome = dataObj[0].value;
+        aluno.Sobrenome = dataObj[1].value;
+        aluno.CPF = dataObj[2].value;
+        aluno.RG = dataObj[3].value;
+        var datetime = dataObj[4].value.split("/");
+        var getDate = new Date(datetime[2], datetime[0], datetime[1]);
+        aluno.dtNascimento = getDate.toISOString();
+        $.ajax({
+            url: acesso + "/Aluno/" + id,
+            dataType: "json",
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            method: "PUT",
+            data: aluno,
+            success: function (response) {
+                EditarAlunoEmEscola(response);
+                waitingDialog.hide();
+            },
+            failure: function (response) {
+                console.log(response.d);
+            }
+        });
+
+        e.preventDefault();
+    });
+
+    function EditarAlunoEmEscola(data) {
+        var EscolaId = $("#slcEditarEscolasJquery").val();
+        var escolaAluno = {};
+        escolaAluno.AlunoId = data.AlunoId.toString();
+        escolaAluno.EscolaId = EscolaId;
+        escolaAluno.CodigoMatricula = data.CodigoMatricula;
+        $.ajax({
+            url: acesso + "/EscolaAluno/",
+            dataType: "json",
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            method: "PUT",
+            data: escolaAluno,
+            success: function (response) {
+                obterTodosAlunos();
+                $("#cadastrarAlunoJquery").modal('hide');
+            },
+            failure: function (response) {
+                console.log(response);
+            }
+        })
+    };
+
+</script>
