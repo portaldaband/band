@@ -13,13 +13,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/14/2017 21:02:14</publishTime>
     </File>
     <File Include="bin/Apresentacao.Api.dll">
-      <publishTime>05/15/2017 14:06:28</publishTime>
+      <publishTime>05/15/2017 16:14:18</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>03/02/2015 09:32:26</publishTime>
+      <publishTime>02/03/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>03/02/2015 09:32:26</publishTime>
+      <publishTime>02/03/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/EscolaDominio.dll">
       <publishTime>05/14/2017 21:02:14</publishTime>

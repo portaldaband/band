@@ -127,6 +127,7 @@
             success: function (response) {
                 obterTodosAlunos();
                 $("#cadastrarAlunoJquery").modal('hide');
+                $('#frmCadastrarAlunoJquery').trigger("reset");
             },
             failure: function (response) {
                 console.log(response);
@@ -228,6 +229,8 @@
             success: function (response) {
                 EditarAlunoEmEscola(response);
                 waitingDialog.hide();
+                $("#editarAlunoJquery").modal('hide');
+                $('#frmEditarAlunoJquery').trigger("reset");
             },
             failure: function (response) {
                 console.log(response.d);
@@ -251,7 +254,6 @@
             data: escolaAluno,
             success: function (response) {
                 obterTodosAlunos();
-                $("#cadastrarAlunoJquery").modal('hide');
             },
             failure: function (response) {
                 console.log(response);

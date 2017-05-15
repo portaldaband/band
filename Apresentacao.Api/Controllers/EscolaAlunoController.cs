@@ -1,6 +1,7 @@
 ﻿using Apresentacao.Api.ViewModel;
 using EscolaDominio;
 using EscolaInfra.Context;
+using EscolaServico;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,10 @@ namespace Apresentacao.Api.Controllers
     public class EscolaAlunoController : ApiController
     {
         private EscolaContexto db = new EscolaContexto();
+        private readonly EscolaService _escolaServico = new EscolaService();
+        private readonly EscolaAlunoServico _escolaAlunoServico = new EscolaAlunoServico();
+        private readonly AlunoServico _alunoServico = new AlunoServico();
+
 
         [HttpGet]
         // GET: api/EscolaAluno
@@ -54,22 +59,19 @@ namespace Apresentacao.Api.Controllers
         [ResponseType(typeof(void))]
         public IHttpActionResult PutEscolaAluno(EscolaAluno escolaAluno)
         {
-            var escola = db.Escola.Where(c => c.EscolaId == escolaAluno.EscolaId).FirstOrDefault();
-            var aluno = db.Aluno.Where(c => c.AlunoId == escolaAluno.AlunoId).FirstOrDefault();
-
-
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            if (escola.EscolaId != escolaAluno.EscolaId && aluno.AlunoId != escolaAluno.AlunoId)
+           
+            if (escolaAluno == null)
             {
-                return BadRequest();
+                return BadRequest("Este aluno não esta associado a uma escola.");
             }
 
-            db.Entry(escolaAluno).State = EntityState.Modified;
 
+            if(db.Entry(escolaAluno).State == EntityState.Detached)
+            db.EscolaAluno.Attach(escolaAluno);
             try
             {
                 db.SaveChanges();
@@ -79,14 +81,14 @@ namespace Apresentacao.Api.Controllers
                 throw;
             }
 
-            var escolaAlunoNovo = new EscolaAlunoApiViewModel
+            var escolaAlunoViewModel = new EscolaAlunoApiViewModel
             {
                 AlunoId = escolaAluno.AlunoId.ToString(),
                 EscolaId = escolaAluno.EscolaId.ToString(),
                 CodigoMatricula = escolaAluno.CodigoMatricula
             };
 
-            return Ok(escolaAlunoNovo);
+            return Ok(escolaAlunoViewModel);
         }
 
         // POST: api/EscolaAluno

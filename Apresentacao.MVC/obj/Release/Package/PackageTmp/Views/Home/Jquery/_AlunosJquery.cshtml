@@ -127,6 +127,7 @@
             success: function (response) {
                 obterTodosAlunos();
                 $("#cadastrarAlunoJquery").modal('hide');
+                $('#frmCadastrarAlunoJquery').trigger("reset");
             },
             failure: function (response) {
                 console.log(response);
@@ -251,7 +252,8 @@
             data: escolaAluno,
             success: function (response) {
                 obterTodosAlunos();
-                $("#cadastrarAlunoJquery").modal('hide');
+                $("#editarAlunoJquery").modal('hide');
+                $('#frmEditarAlunoJquery').trigger("reset");
             },
             failure: function (response) {
                 console.log(response);

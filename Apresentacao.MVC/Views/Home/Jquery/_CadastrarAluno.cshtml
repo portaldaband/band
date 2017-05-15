@@ -20,10 +20,10 @@
                         <div class="row" style="margin-top:10px;">
                             <div class="col-md-12 form-group">
                                 <div class="col-md-6">
-                                    <input type="text" name="CPF" class="form-control cpf" placeholder="CPF" id="cpfAlunoJquery" required/>
+                                    <input type="text" pattern=".{14,}" name="CPF" class="form-control cpf" placeholder="CPF" id="cpfAlunoJquery" required title="Favor informar os 11 números"/>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" name="RG" class="form-control rg" placeholder="Número do RG" id="rgAlunoJquery" required/>
+                                    <input type="text" pattern=".{10,}" name="RG" class="form-control rg" placeholder="Número do RG" id="rgAlunoJquery" required/>
                                 </div>
                             </div>
                         </div>
