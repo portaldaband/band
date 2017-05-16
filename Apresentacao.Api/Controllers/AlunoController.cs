@@ -56,7 +56,7 @@ namespace Apresentacao.Api.Controllers
         public IHttpActionResult GetAluno(int id)
         {
             var aluno = _alunoServico.ObterPorId(id);
-            var escolaAluno = _escolaAlunoServico.ObterTodosLazyLoad().Where(a => a.AlunoId == aluno.AlunoId).FirstOrDefault();
+            var escolaAluno = _escolaAlunoServico.ObterTodosLazyLoad().Where(a => a.AlunoId == aluno.AlunoId).LastOrDefault();
             var escola = _escolaServico.ObterTodosLazyLoad().Where(c => c.EscolaId == escolaAluno.EscolaId).FirstOrDefault();
 
             var alunoNovo = new AlunoEscolaViewModel

@@ -28,7 +28,8 @@ namespace Apresentacao.Api.Controllers
         public List<EscolaAlunoApiViewModel> GetEscolaAluno()
         {
             List<EscolaAlunoApiViewModel> escolaAluno = new List<EscolaAlunoApiViewModel>();
-            foreach (var item in db.EscolaAluno)
+            var escolas = _escolaAlunoServico.ObterTodosLazyLoad();
+            foreach (var item in escolas)
             {
                 escolaAluno.Add(new EscolaAlunoApiViewModel
                 {
